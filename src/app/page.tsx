@@ -1,112 +1,165 @@
-import Image from "next/image";
+'use client'
 
+import Image from "next/image";
+import Link from "next/link";
+
+export const photos = [
+  {
+    id: 0,
+    src:
+      "https://images.unsplash.com/photo-1526731530795-375e081e6154?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1526731530795-375e081e6154?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Summer is here at last.",
+    link: "https://unsplash.com/photos/aBJBMYwzEd8",
+    author: "Photo by Paul Rysz",
+    location: "Aberdeen, United Kingdom",
+    date: "Published on May 19, 2018",
+    width: 1300,
+    height: 1980,
+  },
+  {
+    id: 1,
+    src:
+      "https://images.unsplash.com/photo-1554311825-6f9e499ba167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1554311825-6f9e499ba167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Sunrise over the rocks",
+    link: "https://unsplash.com/photos/Xqmj-oQ_Nek",
+    author: "Photo by David Boca",
+    location: "Peroj, Croatia",
+    date: "Published on April 3, 2019",
+    width: 1300,
+    height: 1980,
+  },
+  {
+    id: 2,
+    src:
+      "https://images.unsplash.com/photo-1604323840993-31ba40161d04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1604323840993-31ba40161d04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Visit Venice at least once in your life!",
+    link: "https://unsplash.com/photos/l6Ezx0k8c8c",
+    author: "Photo by Alen Rojnic",
+    location: "Venice, Italy",
+    date: "Published on November 2, 2020",
+    width: 1300,
+    height: 1980,
+  },
+  {
+    id: 3,
+    src:
+      "https://images.unsplash.com/photo-1607344563948-8eb7855393b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1607344563948-8eb7855393b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Streams of peace",
+    link: "https://unsplash.com/photos/797pFBFMI5s",
+    author: "Photo by Neil Mark Thomas",
+    location: "Llyn Ogwen, United Kingdom",
+    date: "Published on December 7, 2020",
+    width: 1300,
+    height: 1980,
+  },
+  {
+    id: 4,
+    src:
+      "https://images.unsplash.com/photo-1509839914329-d4beac94085f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1509839914329-d4beac94085f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Teal in the artic",
+    link: "https://unsplash.com/photos/pr5sIzsWPvg",
+    author: "Photo by Ernesto Leon",
+    location: "Huascaran, Peru",
+    date: "Published on November 4, 2017",
+    width: 1300,
+    height: 1980,
+  },
+  {
+    id: 5,
+    src:
+      "https://images.unsplash.com/photo-1603659514658-cb2ea72620bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1603659514658-cb2ea72620bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Cedars for days",
+    link: "https://unsplash.com/photos/33lF7-_S-Vw",
+    author: "Photo by Elias Maurer",
+    location: "Rote Wand, Tyrnau, Österreich",
+    date: "Published on October 25, 2020",
+    width: 963,
+    height: 1541,
+  },
+  {
+    id: 6,
+    src:
+      "https://images.unsplash.com/photo-1609154767012-331529e7d73b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1609154767012-331529e7d73b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title: "Surreal bench at sunrise",
+    link: "https://unsplash.com/photos/hVKXCpdNnW8",
+    author: "Photo by Egzon Muliqi",
+    location: "Unknown",
+    date: "Published on December 28, 2020",
+    width: 1300,
+    height: 1980,
+  },
+  {
+    id: 7,
+    src:
+      "https://images.unsplash.com/photo-1603572161235-cdc0524b5c3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1300&q=80",
+    placeholder:
+      "https://images.unsplash.com/photo-1603572161235-cdc0524b5c3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=45&h=63&q=80",
+    title:
+      "A view of a starry night sky with the Milky Way Galaxy on Del Valle in Livermore, California.",
+    link: "https://unsplash.com/photos/0CDogO-dEEE",
+    author: "Photo by ",
+    location: "Del Valle Regional Park, CA, US",
+    date: "Published on October 24, 2020",
+    width: 1300,
+    height: 1980,
+  },
+];
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div className="p-10 grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div className="bg-gradient-to-tr from-purple-600 to-indigo-600 p-8 flex rounded-2xl items-center">
+          <h1 className="font-extrabold text-3xl xl:text-5xl text-indigo-200 leading-tight">
+            Page Transitions in{" "}
+            <a href="https://nextjs.org" className="text-white">
+              Next.js
+            </a>{" "}
+            with{" "}
+            <a href="https://www.framer.com/motion/" className="text-white">
+              Framer Motion
+              <span className="text-purple-300">.</span>
+              <span className="text-purple-300/70">.</span>
+              <span className="text-purple-300/40">.</span>
+              <span className="text-purple-300/10">.</span>
+            </a>
+          </h1>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        {photos.map((photo) => (
+          <Link
+            className="overflow-hidden flex rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl hover:z-10 transition-all ease-in-out"
+            href={`/photo/${photo.id}`}
+            scroll={false}
+            key={photo.id}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.title}
+              placeholder="blur"
+              blurDataURL={photo.placeholder}
+              width={photo.width}
+              height={photo.height}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "cover",
+              }}
+            />
+          </Link>
+        ))}
       </div>
     </main>
   );
