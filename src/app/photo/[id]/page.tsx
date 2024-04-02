@@ -8,7 +8,6 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 const photos = [
@@ -127,7 +126,13 @@ const photos = [
   },
 ];
 
-const PhotoDetail = ({ params: { id } }) => {
+interface PhotoDetailProps {
+  params: {
+    id: number;
+  };
+}
+
+const PhotoDetail: React.FC<PhotoDetailProps> = ({ params: { id } }) => {
   const photo = photos[id];
 
   if (!photo) {
